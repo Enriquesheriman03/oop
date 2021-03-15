@@ -30,6 +30,7 @@ int main(){
     student mahasiswa[jumlah_mahasiswa];
     int i;
     double hasil;
+    cout << "Enrique Sheriman" << endl;
 
     cout << "--------------------------------------------------------------------" << endl;
     cout << "\t\t MENGHITUNG NILAI AKHIR \t\t" << endl;
