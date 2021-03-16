@@ -24,8 +24,6 @@ string nilaiakhir(student mahasiswa[], int jml) {
     }
     return ket;
 
-
-   
 }
 
 int main(){
@@ -40,12 +38,9 @@ int main(){
     
     cout << endl;
 
-    
     i = 0;
     do {cout << "\tDATA MAHASISWA NOMOR\t " << i+1 << endl;
         cout << "=====================================" << endl;
-
-        
 
         cout << "Masukkan NAMA mahasiswa nomor\t" << i+1 << endl;
         cin >> mahasiswa[i].nama;
@@ -74,11 +69,9 @@ int main(){
         cout << "NAMA" << "\t" <<"KEHADIRAN" << "\t"<< "TUGAS" << "\t" << "KUIS" << "\t" << "UTS" << "\t" << "UAS" << "\t" << "NILAI AKHIR" << "\t" << endl;
 
 
+	mahasiswa[i].hasil = nilaiakhir(i, mahasiswa);
        
-        mahasiswa[i].hasil = nilaiakhir(i, mahasiswa);
-       
-
-        cout << mahasiswa[i].nama << "\t" << "\t" << mahasiswa[i].kehadiran << "\t" << mahasiswa[i].tugas << "\t" << mahasiswa[i].kuis << "\t" << mahasiswa[i].uts << "\t" << mahasiswa[i].uas << "\t" ;
+	   cout << mahasiswa[i].nama << "\t" << "\t" << mahasiswa[i].kehadiran << "\t" << mahasiswa[i].tugas << "\t" << mahasiswa[i].kuis << "\t" << mahasiswa[i].uts << "\t" << mahasiswa[i].uas << "\t" ;
         printf("%.2f ", mahasiswa[i].hasil);
 
         if(mahasiswa[i].hasil >= 91){
@@ -104,7 +97,5 @@ int main(){
     } while (i < jumlah_mahasiswa);
     
 
-   
-
-    cout << endl;
+   cout << endl;
 }
