@@ -5,15 +5,15 @@ using namespace std;
 
 struct student {
     string nama, indeks;
-    double kehadiran,tugas, kuis, uts, uas, hasil;
+    double kehadiran, tugas, kuis, uts, uas, hasil;
 };
 
 
 double nilaiakhir(int i, student mahasiswa[]) { 
-    return (mahasiswa[i].kehadiran * 0.2) + (mahasiswa[i].tugas * 0.4) + (mahasiswa[i].kuis * 0.3) + (mahasiswa[i].uts * 0.4) + (mahasiswa[i].uas * 0);
+    return (mahasiswa[i].kehadiran * 10/100) + (mahasiswa[i].tugas * 20/100) + 
+	(mahasiswa[i].kuis *10/100) + (mahasiswa[i].uts * 30/100) + (mahasiswa[i].uas * 30/100);
 }
-
-string nilaitertinggi(student mahasiswa[], int jml) {
+string nilaiakhir(student mahasiswa[], int jml) {
     string ket;
     int max = 0;
     for (int i = 0; i < jml; i++) {
@@ -23,6 +23,9 @@ string nilaitertinggi(student mahasiswa[], int jml) {
         }
     }
     return ket;
+
+
+   
 }
 
 int main(){
@@ -33,22 +36,18 @@ int main(){
     cout << "Enrique Sheriman" << endl;
 
     cout << "--------------------------------------------------------------------" << endl;
-    cout << "\t\t MENGHITUNG NILAI AKHIR \t\t" << endl;
-    cout << "\t MAHASISWA TEKNIK INFORMASI UNIVERSITAS UNKLAB \t" << endl;
-    cout << "---------------------------------------------------------------------" << endl;
+    cout << " MENGHITUNG NILAI AKHIR(Grading) MAHASISWA TEKNIK INFORMASI UNIVERSITAS UNKLAB " << endl;
+    
     cout << endl;
 
     
     i = 0;
-    do {
-    
-        cout << "=====================================" << endl;
-        cout << "\tDATA MAHASISWA KE\t " << i+1 << endl;
+    do {cout << "\tDATA MAHASISWA NOMOR\t " << i+1 << endl;
         cout << "=====================================" << endl;
 
         
 
-        cout << "Masukkan NAMA mahasiswa ke-" << i+1 << endl;
+        cout << "Masukkan NAMA mahasiswa nomor\t" << i+1 << endl;
         cin >> mahasiswa[i].nama;
         
 		cout <<"Masukkan KEHADIRAN dari " << mahasiswa[i].nama << ": ";
@@ -71,9 +70,9 @@ int main(){
         cin >> mahasiswa[i].uas;
         cout << endl;
 
-        cout << "-------------------------------------------------------------------------------" << endl;
+        
         cout << "NAMA" << "\t" <<"KEHADIRAN" << "\t"<< "TUGAS" << "\t" << "KUIS" << "\t" << "UTS" << "\t" << "UAS" << "\t" << "NILAI AKHIR" << "\t" << endl;
-        cout << "-------------------------------------------------------------------------------" << endl;
+
 
        
         mahasiswa[i].hasil = nilaiakhir(i, mahasiswa);
@@ -93,10 +92,10 @@ int main(){
             cout << " (B) " << endl;
         } else if(mahasiswa[i].hasil >= 75){
             cout << " (-B) " << endl;
-        } else if(mahasiswa[i].hasil >= 40){
-            cout << " (D) " << endl;
+        } else if(mahasiswa[i].hasil >= 65){
+            cout << " (C) " << endl;
         } else {
-            cout << " (E) " << endl;
+            cout << " (D) " << endl;
         }
         
         cout << endl;
